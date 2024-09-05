@@ -11,8 +11,8 @@ spring:
     console:
       enabled: true
       path: /h2
+server:
+  port: 9090
 
-#logging:
-#  config: classpath:log-config.xml
-
-
+  #logging:
+  #  config: classpath:log-config.xml

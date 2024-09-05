@@ -12,13 +12,15 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //@Column(length = 120)
+    @Column(length = 120)
     private String name;
 
     private boolean checkDone;
     //@Min(0)
     //@Max(2)
     private int priority;
+
+    //format: 2024-09-05T11:44:41.427365
     private LocalDateTime creationDate;
     private LocalDateTime doneDate;
     private LocalDateTime dueDate;
@@ -58,7 +60,7 @@ public class Task {
         return creationDate;
     }
     public void setCreationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
+        this.creationDate = LocalDateTime.now();
     }
 
     public LocalDateTime getDoneDate() {
@@ -92,7 +94,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Person{" + "id=" + id + ", name='" + name + '\'' + ", checkDone='" + checkDone + '\''
+        return "Task{" + "id=" + id + ", name='" + name + '\'' + ", checkDone='" + checkDone + '\''
                 + ", priority=" + priority + ", creationDate='" + creationDate
                 + ", doneDate='" + doneDate+ ", dueDate='" + dueDate + '\'' + '}';
     }
